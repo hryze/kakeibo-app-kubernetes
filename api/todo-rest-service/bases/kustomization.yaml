@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - deployment/todo-deployment.yaml
   - hpa/todo-hpa.yaml
+  - ingress/todo-alb-ingress.yaml
   - pdb/todo-pdb.yaml
   - secret/todo-secret.yaml
   - service/todo-service.yaml
