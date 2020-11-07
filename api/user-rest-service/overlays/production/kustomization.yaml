@@ -4,10 +4,10 @@ resources:
   - ../../bases
 patchesStrategicMerge:
   - deployment/user-deployment.yaml
+  - externalsecret/user-secret.yaml
   - hpa/user-hpa.yaml
   - ingress/user-alb-ingress.yaml
   - pdb/user-pdb.yaml
-  - secret/user-secret.yaml
   - service/user-service.yaml
 commonLabels:
   app: user
