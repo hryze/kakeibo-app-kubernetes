@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../bases
 patchesStrategicMerge:
+  - externalsecret/rds-secret.yaml
   - job/init-rds-job.yaml
 namespace: kube-system
 images:
