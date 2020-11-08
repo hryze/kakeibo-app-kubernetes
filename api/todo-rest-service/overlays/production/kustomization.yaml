@@ -4,10 +4,10 @@ resources:
   - ../../bases
 patchesStrategicMerge:
   - deployment/todo-deployment.yaml
+  - externalsecret/todo-secret.yaml
   - hpa/todo-hpa.yaml
   - ingress/todo-alb-ingress.yaml
   - pdb/todo-pdb.yaml
-  - secret/todo-secret.yaml
   - service/todo-service.yaml
 commonLabels:
   app: todo
