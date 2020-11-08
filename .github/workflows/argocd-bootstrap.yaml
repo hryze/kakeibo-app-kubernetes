@@ -1,5 +1,11 @@
 name: ArgoCD bootstrap
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        description: Environment to apply
+        default: production
 defaults:
   run:
     shell: bash
@@ -25,4 +31,4 @@ jobs:
         run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name kakeibo-prod-cluster
 
       - name: Kubectl apply
-        run: kubectl apply -f bootstrap/overlays/production/bootstrap.yaml
+        run: kubectl apply -f bootstrap/overlays/${{ github.event.inputs.environment }}/bootstrap.yaml
