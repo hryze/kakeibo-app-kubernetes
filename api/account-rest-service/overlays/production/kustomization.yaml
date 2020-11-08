@@ -5,6 +5,7 @@ resources:
 patchesStrategicMerge:
   - deployment/account-deployment.yaml
   - hpa/account-hpa.yaml
+  - ingress/account-alb-ingress.yaml
   - pdb/account-pdb.yaml
   - secret/account-secret.yaml
   - service/account-service.yaml

@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../bases
+  - externalsecret/argocd-secret.yaml
+  - ingress/argocd-alb-ingress.yaml
+  - service/argocd-server-nodeport.yaml
+patchesStrategicMerge:
+  - configmap/argocd-cm.yaml
+  - deployment/argocd-server.yaml
+  - secret/argocd-secret.yaml
+namespace: argocd

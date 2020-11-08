@@ -5,6 +5,7 @@ resources:
 patchesStrategicMerge:
   - deployment/user-deployment.yaml
   - hpa/user-hpa.yaml
+  - ingress/user-alb-ingress.yaml
   - pdb/user-pdb.yaml
   - secret/user-secret.yaml
   - service/user-service.yaml
