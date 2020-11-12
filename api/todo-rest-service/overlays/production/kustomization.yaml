@@ -1,21 +1,21 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../bases
+- ../../bases
 patchesStrategicMerge:
-  - deployment/todo-deployment.yaml
-  - externalsecret/todo-secret.yaml
-  - hpa/todo-hpa.yaml
-  - ingress/todo-alb-ingress.yaml
-  - pdb/todo-pdb.yaml
-  - service/todo-service.yaml
+- deployment/todo-deployment.yaml
+- externalsecret/todo-secret.yaml
+- hpa/todo-hpa.yaml
+- ingress/todo-alb-ingress.yaml
+- pdb/todo-pdb.yaml
+- service/todo-service.yaml
 commonLabels:
   app: todo
 images:
-  - name: 048246832408.dkr.ecr.ap-northeast-1.amazonaws.com/todo-rest-service
-    newTag: IMAGE_TAG
+- name: 048246832408.dkr.ecr.ap-northeast-1.amazonaws.com/todo-rest-service
+  newTag: release.411f7a15609c0e60bbbb20d40db9d72a4e4f5d94
 configMapGenerator:
-  - name: todo-configmap
-    literals:
-      - ALLOWED_ORIGIN=https://www.shakepiper.com
-      - USER_HOST=user-service.default.svc.cluster.local
+- literals:
+  - ALLOWED_ORIGIN=https://www.shakepiper.com
+  - USER_HOST=user-service.default.svc.cluster.local
+  name: todo-configmap
