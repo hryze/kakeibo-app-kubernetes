@@ -28,4 +28,7 @@ jobs:
         run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name kakeibo-prod-cluster
 
       - name: Kubectl apply
-        run: kubectl apply -f bootstrap/overlays/${{ github.event.inputs.environment }}/bootstrap.yaml
+        run: |
+          kubectl create namespace argocd
+          kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v1.7.8/manifests/install.yaml -n argocd
+          kubectl apply -f bootstrap/overlays/${{ github.event.inputs.environment }}/bootstrap.yaml
