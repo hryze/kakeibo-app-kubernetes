@@ -7,6 +7,7 @@ resources:
   - service/argocd-server-nodeport.yaml
 patchesStrategicMerge:
   - configmap/argocd-cm.yaml
+  - configmap/argocd-rbac-cm.yaml
   - deployment/argocd-server.yaml
   - secret/argocd-secret.yaml
 namespace: argocd

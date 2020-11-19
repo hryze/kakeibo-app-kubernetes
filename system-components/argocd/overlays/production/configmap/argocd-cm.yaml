@@ -16,3 +16,7 @@ data:
         config:
           clientID: 5d13db2dace324a0561f
           clientSecret: $dex.github.clientSecret
+          orgs:
+            - name: shakepiper
+              teams:
+               - sre-team
