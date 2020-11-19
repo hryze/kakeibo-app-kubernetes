@@ -19,4 +19,4 @@ data:
           orgs:
             - name: shakepiper
               teams:
-               - sre-team
+                - sre-team
