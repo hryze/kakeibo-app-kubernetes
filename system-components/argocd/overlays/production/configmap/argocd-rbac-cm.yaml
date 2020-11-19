@@ -6,7 +6,8 @@ metadata:
     app.kubernetes.io/part-of: argocd
   name: argocd-rbac-cm
 data:
-  policy.default: role:readonly
   policy.csv: |
     p, role:org-admin, *, *, *, allow
     g, shakepiper:sre-team, role:org-admin
+    g, shakepiper:backend-team, role:readonly
+    g, shakepiper:frontend-team, role:readonly
