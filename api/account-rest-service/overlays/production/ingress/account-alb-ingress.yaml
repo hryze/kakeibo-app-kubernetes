@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/group.name: kakeibo-app
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-1:048246832408:certificate/0cb20034-bfe5-4083-87a7-2d07597b2523
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-1:048246832408:certificate/550044a7-dd94-499a-aa32-1890c51fe9af
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": {"Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
   labels:
