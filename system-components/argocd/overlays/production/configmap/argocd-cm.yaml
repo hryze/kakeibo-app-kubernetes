@@ -20,3 +20,5 @@ data:
             - name: shakepiper
               teams:
                 - sre-team
+                - backend-team
+                - frontend-team
