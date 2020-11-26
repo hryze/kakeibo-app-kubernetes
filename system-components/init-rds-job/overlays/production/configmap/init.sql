@@ -3,10 +3,12 @@ USE user;
 
 CREATE TABLE users
 (
-  user_id VARCHAR(10) NOT NULL PRIMARY KEY,
+  user_id VARCHAR(10) NOT NULL,
   name VARCHAR(50) NOT NULL,
   email VARCHAR(50) NOT NULL,
-  password TEXT NOT NULL
+  password VARCHAR(60) NOT NULL,
+  PRIMARY KEY(user_id),
+  UNIQUE uq_users(email)
 );
 
 CREATE TABLE group_names
@@ -106,7 +108,8 @@ CREATE TABLE transactions
     ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY fk_custom_category_id(custom_category_id)
     REFERENCES custom_categories(id)
-    ON DELETE SET NULL ON UPDATE CASCADE
+    ON DELETE SET NULL ON UPDATE CASCADE,
+  INDEX idx_user_id(user_id)
 );
 
 CREATE TABLE standard_budgets
@@ -172,7 +175,8 @@ CREATE TABLE group_transactions
     ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY fk_custom_category_id(custom_category_id)
     REFERENCES group_custom_categories(id)
-    ON DELETE SET NULL ON UPDATE CASCADE
+    ON DELETE SET NULL ON UPDATE CASCADE,
+  INDEX idx_group_id(group_id)
 );
 
 CREATE TABLE group_standard_budgets
@@ -209,7 +213,8 @@ CREATE TABLE group_accounts
   receipt_confirmation bit(1) NOT NULL DEFAULT b'0',
   group_id INT NOT NULL,
   PRIMARY KEY(id),
-  UNIQUE uq_group_accounts(years_months, payer_user_id, recipient_user_id, group_id)
+  UNIQUE uq_group_accounts(years_months, payer_user_id, recipient_user_id, group_id),
+  INDEX idx_group_id(group_id)
 );
 
 -- big_categories table default data
@@ -351,7 +356,8 @@ CREATE TABLE todo_list
   todo_content VARCHAR(100) NOT NULL,
   complete_flag bit(1) NOT NULL DEFAULT b'0',
   user_id VARCHAR(10) NOT NULL,
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
+  INDEX idx_user_id(user_id)
 );
 
 CREATE TABLE group_todo_list
@@ -365,7 +371,8 @@ CREATE TABLE group_todo_list
   complete_flag bit(1) NOT NULL DEFAULT b'0',
   user_id VARCHAR(10) NOT NULL,
   group_id INT NOT NULL,
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
+  INDEX idx_group_id(group_id)
 );
 
 CREATE TABLE group_tasks_users
@@ -374,7 +381,8 @@ CREATE TABLE group_tasks_users
   user_id VARCHAR(10) NOT NULL,
   group_id INT NOT NULL,
   PRIMARY KEY(id),
-  UNIQUE uq_group_tasks_users(user_id, group_id)
+  UNIQUE uq_group_tasks_users(user_id, group_id),
+  INDEX idx_group_id(group_id)
 );
 
 CREATE TABLE group_tasks
@@ -389,5 +397,6 @@ CREATE TABLE group_tasks
   PRIMARY KEY(id),
   FOREIGN KEY fk_group_tasks_users_id(group_tasks_users_id)
     REFERENCES group_tasks_users(id)
-    ON DELETE SET NULL ON UPDATE CASCADE
+    ON DELETE SET NULL ON UPDATE CASCADE,
+  INDEX idx_group_id(group_id)
 );
