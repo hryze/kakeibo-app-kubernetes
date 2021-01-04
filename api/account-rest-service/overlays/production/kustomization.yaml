@@ -13,7 +13,7 @@ commonLabels:
   app: account
 images:
 - name: 048246832408.dkr.ecr.ap-northeast-1.amazonaws.com/account-rest-service
-  newTag: release.b1ab24893f6de4ece53f96de95fd530f7023d557
+  newTag: release.9201a0f2cd5ad48cc67854ec886303cd151d303a
 configMapGenerator:
 - literals:
   - ALLOWED_ORIGIN=https://www.shakepiper.com
