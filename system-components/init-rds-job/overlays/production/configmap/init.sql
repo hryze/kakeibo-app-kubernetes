@@ -486,3 +486,126 @@ CREATE TABLE group_tasks
     ON DELETE SET NULL ON UPDATE CASCADE,
   INDEX idx_group_id(group_id)
 );
+
+USE user;
+
+-- users table init data
+INSERT INTO users
+  (user_id, name, email, password)
+VALUES
+  ('gohiromi', '郷ひろみ', 'kakeibo@gmail.com', '$2a$10$t2mJ8/chozn4QjVEF4RLy.HkPZUqi3snAvJbRCUTWenkEPlfyFuWi'),
+  ('tati', '舘ひろし', 'tati@gmail.com', '$2a$10$t2mJ8/chozn4QjVEF4RLy.HkPZUqi3snAvJbRCUTWenkEPlfyFuWi'),
+  ('tendo', '天童よしみ', 'tendo@gmail.com', '$2a$10$t2mJ8/chozn4QjVEF4RLy.HkPZUqi3snAvJbRCUTWenkEPlfyFuWi'),
+  ('saigo', '西郷隆盛', 'saigo@gmail.com', '$2a$10$t2mJ8/chozn4QjVEF4RLy.HkPZUqi3snAvJbRCUTWenkEPlfyFuWi');
+
+-- group_users table init data
+INSERT INTO group_names
+  (group_name)
+VALUES
+  ('テラスハウス');
+
+-- group_users table init data
+INSERT INTO group_users
+  (group_id, user_id, color_code)
+VALUES
+  (1, 'gohiromi', '#FF0000'),
+  (1, 'tati', '#00FFFF'),
+  (1, 'tendo', '#80FF00');
+
+-- group_unapproved_users table init data
+INSERT INTO group_unapproved_users
+  (group_id, user_id)
+VALUES
+  (1, 'saigo');
+
+USE account;
+
+-- standard_budgets table init data
+INSERT INTO standard_budgets
+  (user_id, big_category_id)
+VALUES
+  ('gohiromi', 2),
+  ('gohiromi', 3),
+  ('gohiromi', 4),
+  ('gohiromi', 5),
+  ('gohiromi', 6),
+  ('gohiromi', 7),
+  ('gohiromi', 8),
+  ('gohiromi', 9),
+  ('gohiromi', 10),
+  ('gohiromi', 11),
+  ('gohiromi', 12),
+  ('gohiromi', 13),
+  ('gohiromi', 14),
+  ('gohiromi', 15),
+  ('gohiromi', 16),
+  ('gohiromi', 17),
+  ('tati', 2),
+  ('tati', 3),
+  ('tati', 4),
+  ('tati', 5),
+  ('tati', 6),
+  ('tati', 7),
+  ('tati', 8),
+  ('tati', 9),
+  ('tati', 10),
+  ('tati', 11),
+  ('tati', 12),
+  ('tati', 13),
+  ('tati', 14),
+  ('tati', 15),
+  ('tati', 16),
+  ('tati', 17),
+  ('tendo', 2),
+  ('tendo', 3),
+  ('tendo', 4),
+  ('tendo', 5),
+  ('tendo', 6),
+  ('tendo', 7),
+  ('tendo', 8),
+  ('tendo', 9),
+  ('tendo', 10),
+  ('tendo', 11),
+  ('tendo', 12),
+  ('tendo', 13),
+  ('tendo', 14),
+  ('tendo', 15),
+  ('tendo', 16),
+  ('tendo', 17),
+  ('saigo', 2),
+  ('saigo', 3),
+  ('saigo', 4),
+  ('saigo', 5),
+  ('saigo', 6),
+  ('saigo', 7),
+  ('saigo', 8),
+  ('saigo', 9),
+  ('saigo', 10),
+  ('saigo', 11),
+  ('saigo', 12),
+  ('saigo', 13),
+  ('saigo', 14),
+  ('saigo', 15),
+  ('saigo', 16),
+  ('saigo', 17);
+
+-- group_standard_budgets table init data
+INSERT INTO group_standard_budgets
+  (group_id, big_category_id)
+VALUES
+  (1, 2),
+  (1, 3),
+  (1, 4),
+  (1, 5),
+  (1, 6),
+  (1, 7),
+  (1, 8),
+  (1, 9),
+  (1, 10),
+  (1, 11),
+  (1, 12),
+  (1, 13),
+  (1, 14),
+  (1, 15),
+  (1, 16),
+  (1, 17);
