@@ -18,4 +18,5 @@ configMapGenerator:
 - literals:
   - ALLOWED_ORIGIN=https://www.shakepiper.com
   - USER_HOST=user-service.default.svc.cluster.local
+  - TODO_HOST=todo-service.default.svc.cluster.local
   name: account-configmap
