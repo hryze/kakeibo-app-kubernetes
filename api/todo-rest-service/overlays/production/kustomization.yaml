@@ -13,7 +13,7 @@ commonLabels:
   app: todo
 images:
 - name: 048246832408.dkr.ecr.ap-northeast-1.amazonaws.com/todo-rest-service
-  newTag: release.83b95b5d5a7321198d914e9d2f2edf723d7562ac
+  newTag: release.7350f2c671391f83dca089657be16ed903377919
 configMapGenerator:
 - literals:
   - ALLOWED_ORIGIN=https://www.shakepiper.com
