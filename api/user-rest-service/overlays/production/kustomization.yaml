@@ -19,4 +19,5 @@ configMapGenerator:
   - ALLOWED_ORIGIN=https://www.shakepiper.com
   - COOKIE_DOMAIN=shakepiper.com
   - ACCOUNT_HOST=account-service.default.svc.cluster.local
+  - ACCOUNT_PORT=8081
   name: user-configmap
