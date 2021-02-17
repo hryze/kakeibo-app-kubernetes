@@ -16,7 +16,18 @@ images:
   newTag: release.d96d831637a737d92134239f3cf30a7bf1ad2564
 configMapGenerator:
 - literals:
-  - ALLOWED_ORIGIN=https://www.shakepiper.com
-  - USER_HOST=user-service.default.svc.cluster.local
-  - TODO_HOST=todo-service.default.svc.cluster.local
+  - GO_ENV=prod
+  - PROD_SERVER_PORT=8081
+  - PROD_CORS_ALLOWED_ORIGINS="https://www.shakepiper.com"
+  - PROD_COOKIE_NAME="prod_session_id"
+  - PROD_MYSQL_MAX_CONN=25
+  - PROD_MYSQL_MAX_IDLE=25
+  - PROD_MYSQL_MAX_CONN_LIFETIME="300s"
+  - PROD_REDIS_MAX_CONN=25
+  - PROD_REDIS_MAX_IDLE=25
+  - PROD_REDIS_MAX_CONN_LIFETIME="300s"
+  - PROD_USER_HOST="user-service.default.svc.cluster.local"
+  - PROD_USER_PORT=8080
+  - PROD_TODO_HOST="todo-service.default.svc.cluster.local"
+  - PROD_TODO_PORT=8082
   name: account-configmap
