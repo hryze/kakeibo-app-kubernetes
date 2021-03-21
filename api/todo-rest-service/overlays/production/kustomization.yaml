@@ -13,7 +13,7 @@ commonLabels:
   app: todo
 images:
 - name: 048246832408.dkr.ecr.ap-northeast-1.amazonaws.com/todo-rest-service
-  newTag: release.1cb58d8666191545ba8e8187471c094c232fcfa7
+  newTag: release.e94148f0fc85ea03fa26e58ce344d9d052724070
 configMapGenerator:
 - literals:
   - GO_ENV=prod
