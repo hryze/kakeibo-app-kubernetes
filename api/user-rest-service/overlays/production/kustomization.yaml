@@ -13,7 +13,7 @@ commonLabels:
   app: user
 images:
 - name: 048246832408.dkr.ecr.ap-northeast-1.amazonaws.com/user-rest-service
-  newTag: release.47fdd4267e7faf42ffdfce802388de0155c85a3a
+  newTag: release.5c8a1e741744ad89a9e9df76596e64eab3ea1389
 configMapGenerator:
 - literals:
   - GO_ENV=prod
