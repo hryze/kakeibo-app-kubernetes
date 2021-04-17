@@ -13,7 +13,7 @@ commonLabels:
   app: account
 images:
 - name: 048246832408.dkr.ecr.ap-northeast-1.amazonaws.com/account-rest-service
-  newTag: release.e94148f0fc85ea03fa26e58ce344d9d052724070
+  newTag: release.b7c18746ea297aa1be00b5f3640a4d9f867a017f
 configMapGenerator:
 - literals:
   - GO_ENV=prod
