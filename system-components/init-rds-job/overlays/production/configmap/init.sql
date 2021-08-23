@@ -1,8 +1,6 @@
-CREATE
-DATABASE USER;
+CREATE DATABASE user;
 
-USE
-USER;
+USE user;
 
 CREATE TABLE users
 (
@@ -51,11 +49,9 @@ CREATE TABLE group_unapproved_users
     ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-CREATE
-DATABASE account;
+CREATE DATABASE account;
 
-USE
-account;
+USE account;
 
 CREATE TABLE big_categories
 (
@@ -223,11 +219,9 @@ CREATE TABLE group_accounts
   index                idx_group_id(group_id)
 );
 
-CREATE
-DATABASE todo;
+CREATE DATABASE todo;
 
-USE
-todo;
+USE todo;
 
 CREATE TABLE todo_list
 (
@@ -370,8 +364,7 @@ CREATE TABLE group_tasks
   index                idx_group_id(group_id)
 );
 
-USE
-USER;
+USE user;
 
 -- users table init data
 INSERT INTO
@@ -402,8 +395,7 @@ INSERT INTO
 VALUES
   (1, 1, 'saigo');
 
-USE
-account;
+USE account;
 
 -- big_categories table default data
 INSERT INTO
@@ -892,8 +884,7 @@ VALUES
   (9, '2020-11-01', 'tendo', 'tati', 20233, 0x00, 0x00, 1),
   (10, '2020-11-01', 'gohiromi', 'tati', 2633, 0x00, 0x00, 1);
 
-USE
-todo;
+USE todo;
 
 -- todo_list table init data
 INSERT INTO
